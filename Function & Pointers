@@ -1,0 +1,73 @@
+#include<iostream>
+using namespace std;
+int fact(int a)
+{
+	int	factorial=1;
+	for(int i=1;i<=a;++i)
+	{
+		factorial=factorial*i;
+	}
+	cout<<" Factorial of given number is : "<<factorial<<endl;
+}
+int Fibonacci(int seed)
+{
+        int c=0,d,temp;
+        cout<<" Fibonacci series of the given number is : ";
+        for(int j=1;j<10;++j)
+        {
+        	cout<<c<<" ,";
+        	temp=c+seed;
+        	c=seed;
+        	seed=temp;
+        	
+		}
+		cout<<" ... \n";
+	
+}
+int fun1(int *y)
+{
+     cout<<"\n\n Passing by Reference with using Pointers.\n";	
+	if((*y)%2==0)
+	{
+	cout<<" The given number  is Even .  \n";
+	}
+	else
+	{
+		cout<<" The given number  is Odd .  \n";
+	}
+}
+int fun(int &x)
+{
+     cout<<"\n\n Passing by Reference without using Pointers.\n";	
+	if(x%2==0)
+	{
+	cout<<"The given number  is Even .  \n";
+	}
+	else
+	{
+		cout<<"The given number  is Odd .  \n";
+	}
+}
+
+int main()
+{
+	int num;
+	for(int i=1;i<1000;i++)
+	{
+	cout<<" Enter any Positive integer : ";
+	cin>>num;
+	if(num<0)
+	{
+		cout<<" Please read the Statement Carefully then enter the integer.\n";
+		continue;
+	}
+	else if(num>0)
+	{
+		break;
+	}
+    }
+	fact(num);
+	Fibonacci(num);
+	fun1(&num);
+	fun(num);
+	return 0;
